@@ -68,7 +68,7 @@ public class ProductDaoImplTest extends ServicelayerTransactionalTest
 		modelService.save(product);
 
 		// then we try to get this product via our dao
-		assertEquals("Some description", productDAO.getProductImageDescription("1111", "Online"));
+		assertEquals("Some description", productDAO.getProductImageDescription(CATALOG_ID, CATALOG_VER));
 	}
 
 	@Test
