@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- [y] hybris Platform Copyright (c) 2000-2013 hybris AG All rights reserved. This software is the confidential and proprietary information 
+	of hybris ("Confidential Information"). You shall not disclose such Confidential Information and shall use it only in accordance with 
+	the terms of the license agreement you entered into with hybris. -->
+<!-- ATTENTION: This is just an example file. You have to edit it according to your needs. -->
+
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="items.xsd">
+
+	<relations>
+		<relation code="ProductBundle2ProductRelation" localized="false" generate="true" autocreate="true">
+			<sourceElement type="ProductBundle" qualifier="productBundle" cardinality="one" />
+			<targetElement type="Product" qualifier="products" cardinality="many" />
+		</relation>
+	</relations>
+
+	<itemtypes>
+		<itemtype code="Product" autocreate="false" generate="false">
+			<attributes>
+				<attribute qualifier="additionalDescription" type="localized:java.lang.String" autocreate="true" generate="true">
+					<description>Additional description for the product</description>
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="Customer" autocreate="false" generate="false">
+			<attributes>
+				<attribute type="localized:java.lang.String" qualifier="email" autocreate="true" generate="true">
+					<description>Customer email</description>
+					<persistence type="property" />
+					<modifiers read="true" write="true" />
+				</attribute>
+				<attribute type="localized:java.lang.String" qualifier="customerDescription">
+					<description>Dynamic customer description</description>
+					<persistence type="dynamic" attributeHandler="customerDescriptionattributeHandler" />
+					<modifiers read="true" write="false" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="ProductBundle" extends="Product" autocreate="true" generate="true" jaloclass="org.training.jalo.ProductBundle">
+			<deployment table="ProductBundle" typecode="10999" />
+		</itemtype>
+
+		<itemtype code="ImageMedia" extends="Media" autocreate="true" generate="true" jaloclass="org.training.jalo.ImageMedia">
+			<deployment table="ImageMedia" typecode="11000" />
+			<attributes>
+				<attribute qualifier="topic" type="localized:java.lang.String" autocreate="true" generate="true">
+					<description>Topic for the media</description>
+					<persistence type="property" />
+					<modifiers read="true" write="true" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype code="Supplier" extends="GenericItem" autocreate="true" generate="true" jaloclass="org.training.jalo.Supplier">
+			<deployment table="Supplier" typecode="11001" />
+			<custom-properties>
+				<property name="catalogItemType">
+					<value>java.lang.Boolean.TRUE</value>
+				</property>
+				<property name="catalogVersionAttributeQualifier">
+					<value>"catalogVersion"</value>
+				</property>
+				<property name="uniqueKeyAttributeQualifier">
+					<value>"id"</value>
+				</property>
+			</custom-properties>
+			<attributes>
+				<attribute qualifier="id" type="java.lang.String">
+					<modifiers initial="true" optional="false" write="false" />
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="catalogVersion" type="CatalogVersion">
+					<modifiers initial="true" optional="false" write="false" />
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="name" type="localized:java.lang.String" autocreate="true" generate="true">
+					<description>Supplier name</description>
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="false" />
+				</attribute>
+				<attribute qualifier="description" type="localized:java.lang.String" autocreate="true" generate="true">
+					<description>Supplier description</description>
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<!-- <itemtype generate="true" code="MyProduct" jaloclass="org.training.jalo.MyProduct" extends="Product" autocreate="true" > <attributes> 
+			<attribute qualifier="myExampleInitialStringField" type="java.lang.String"> <description>My Example Initial String Value</description> 
+			<modifiers initial="true"/> <persistence type="property"/> </attribute> <attribute qualifier="myExampleBooleanField" type="java.lang.Boolean"> 
+			<description>Example Initial Boolean Field</description> <persistence type="property"/> </attribute> <attribute qualifier="media" type="Media"> 
+			<persistence type="property"/> </attribute> </attributes> </itemtype> -->
+	</itemtypes>
+</items>
