@@ -24,6 +24,19 @@
 		<property name="typeCode" value="User" />
 	</bean>
 
+	<bean id="productSaveInterceptor" class="org.training.interceptors.ProductSaveInterceptor" />
+	<bean id="ProductSaveInterceptorMapping" class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+		<property name="interceptor" ref="productSaveInterceptor" />
+		<property name="typeCode" value="Product" />
+	</bean>
+
+	<!-- Services -->
+	<alias name="productDefaultImageServiceImpl" alias="productDefaultImageService" />
+	<bean id="productDefaultImageServiceImpl" class="org.training.services.ProductDefaultImageServiceImpl" />
+
+	<!-- Listeners -->
+	<bean id="productSaveEventListener" class="org.training.listeners.ProductSaveEventListener" />
+
 	<!-- The hybris platform provides one single Spring application context for beans located at the jalo layer. Each extension can add 
 		beans to this context by specifying them at this configuration file. You can use and/or redefine beans defined at configuration files 
 		of other extensions as well as adding new one. If you want to locate this file at a different location or want to use several files 

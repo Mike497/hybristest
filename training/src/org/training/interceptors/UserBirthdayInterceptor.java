@@ -12,12 +12,16 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import org.apache.log4j.Logger;
+
 
 /**
  *
  */
 public class UserBirthdayInterceptor implements ValidateInterceptor<UserModel>
 {
+
+	private static final Logger LOGGER = Logger.getLogger(UserBirthdayInterceptor.class);
 
 	/*
 	 * (non-Javadoc)
@@ -28,6 +32,7 @@ public class UserBirthdayInterceptor implements ValidateInterceptor<UserModel>
 	@Override
 	public void onValidate(final UserModel model, final InterceptorContext ctx) throws InterceptorException
 	{
+		LOGGER.info("USER BIRTHDAY INTERCEPTOR FIRED!");
 		if (getDiffYears(model.getDateOfBirth(), new Date()) < 12)
 		{
 			throw new InterceptorException("User's date of birth is too small (less than 12 years)!");
