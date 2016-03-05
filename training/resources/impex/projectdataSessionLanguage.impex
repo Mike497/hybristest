@@ -1,0 +1,4 @@
+### setting session language
+INSERT_UPDATE user;uid[unique=true];sessionLanguage(isocode)
+;admin;en
+;anonymous;en
