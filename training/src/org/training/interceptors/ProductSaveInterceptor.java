@@ -42,7 +42,7 @@ public class ProductSaveInterceptor implements PrepareInterceptor<ProductModel>
 		LOGGER.info("FIRING EVENT TO TEST LISTENER...");
 		final ProductSaveEvent event = new ProductSaveEvent(product);
 		eventService.publishEvent(event);
-		product.setPicture(defaultImageService.getDefaultMedia());
+		// product.setPicture(defaultImageService.getDefaultMedia());
 		LOGGER.info("END OF INTERCEPTOR");
 	}
 
