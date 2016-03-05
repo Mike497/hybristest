@@ -89,6 +89,16 @@
 			</attributes>
 		</itemtype>
 
+		<itemtype code="User" autocreate="false" generate="false">
+			<attributes>
+				<attribute qualifier="dateOfBirth" type="java.util.Date" autocreate="true" generate="true">
+					<description>User birthday</description>
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
+			</attributes>
+		</itemtype>
+
 		<!-- <itemtype generate="true" code="MyProduct" jaloclass="org.training.jalo.MyProduct" extends="Product" autocreate="true" > <attributes> 
 			<attribute qualifier="myExampleInitialStringField" type="java.lang.String"> <description>My Example Initial String Value</description> 
 			<modifiers initial="true"/> <persistence type="property"/> </attribute> <attribute qualifier="myExampleBooleanField" type="java.lang.Boolean"> 

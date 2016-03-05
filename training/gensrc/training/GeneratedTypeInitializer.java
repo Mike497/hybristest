@@ -111,6 +111,8 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 				single_createattr_Supplier_description();
 			
+				single_createattr_User_dateOfBirth();
+			
 		createRelationAttributes(
 			"ProductBundle2ProductRelation", 
 			false, 
@@ -267,6 +269,23 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 	}
 	
+	public void single_createattr_User_dateOfBirth() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"User", 
+					"dateOfBirth",  
+					null,
+					"java.util.Date",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
 
 
 	/**
@@ -377,6 +396,18 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			single_setAttributeProperties_Supplier_name();
 		
 			single_setAttributeProperties_Supplier_description();
+		
+				{
+				Map customPropsMap = new HashMap();
+				
+				changeMetaType(
+					"User",
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_User_dateOfBirth();
 		
 	}
 
@@ -546,6 +577,28 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 							setAttributeProperties(
 								"Supplier", 
 								"description",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_User_dateOfBirth() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"User", 
+								"dateOfBirth",
 								false, 
 								null,
 								null,

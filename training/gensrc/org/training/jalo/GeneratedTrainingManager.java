@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Mar 4, 2016 12:08:14 PM                     ---
+ * --- Generated at Mar 5, 2016 2:05:51 PM                      ---
  * ----------------------------------------------------------------
  */
 package org.training.jalo;
@@ -17,11 +17,13 @@ import de.hybris.platform.jalo.c2l.C2LManager;
 import de.hybris.platform.jalo.c2l.Language;
 import de.hybris.platform.jalo.extension.Extension;
 import de.hybris.platform.jalo.product.Product;
+import de.hybris.platform.jalo.security.Principal;
 import de.hybris.platform.jalo.type.ComposedType;
 import de.hybris.platform.jalo.type.JaloGenericCreationException;
 import de.hybris.platform.jalo.user.Customer;
 import de.hybris.platform.jalo.user.User;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import org.training.constants.TrainingConstants;
@@ -46,6 +48,9 @@ public abstract class GeneratedTrainingManager extends Extension
 		tmp = new HashMap<String, AttributeMode>();
 		tmp.put("email", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.jalo.user.Customer", Collections.unmodifiableMap(tmp));
+		tmp = new HashMap<String, AttributeMode>();
+		tmp.put("dateOfBirth", AttributeMode.INITIAL);
+		ttmp.put("de.hybris.platform.jalo.user.User", Collections.unmodifiableMap(tmp));
 		DEFAULT_INITIAL_ATTRIBUTES = ttmp;
 	}
 	@Override
@@ -216,6 +221,42 @@ public abstract class GeneratedTrainingManager extends Extension
 	public Supplier createSupplier(final Map attributeValues)
 	{
 		return createSupplier( getSession().getSessionContext(), attributeValues );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>User.dateOfBirth</code> attribute.
+	 * @return the dateOfBirth - User birthday
+	 */
+	public Date getDateOfBirth(final SessionContext ctx, final User item)
+	{
+		return (Date)item.getProperty( ctx, TrainingConstants.Attributes.User.DATEOFBIRTH);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>User.dateOfBirth</code> attribute.
+	 * @return the dateOfBirth - User birthday
+	 */
+	public Date getDateOfBirth(final User item)
+	{
+		return getDateOfBirth( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>User.dateOfBirth</code> attribute. 
+	 * @param value the dateOfBirth - User birthday
+	 */
+	public void setDateOfBirth(final SessionContext ctx, final User item, final Date value)
+	{
+		item.setProperty(ctx, TrainingConstants.Attributes.User.DATEOFBIRTH,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>User.dateOfBirth</code> attribute. 
+	 * @param value the dateOfBirth - User birthday
+	 */
+	public void setDateOfBirth(final User item, final Date value)
+	{
+		setDateOfBirth( getSession().getSessionContext(), item, value );
 	}
 	
 	/**
