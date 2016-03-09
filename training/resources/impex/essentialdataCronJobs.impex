@@ -3,4 +3,5 @@ INSERT_UPDATE CronJob; code[unique=true];job(code);singleExecutable;sessionLangu
  
 INSERT_UPDATE Trigger;cronjob(code)[unique=true];cronExpression
 #% afterEach: impex.getLastImportedItem().setActivationTime(new Date());
-; offlineProductsCronJob; 0 0 0 * * ?
+;offlineProductsCronJob;0 0 0 ? * *
+;offlineProductsCronJob;0 0 3 * * MON

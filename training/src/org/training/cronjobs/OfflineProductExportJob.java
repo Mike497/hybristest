@@ -52,7 +52,7 @@ public class OfflineProductExportJob extends AbstractJobPerformable<CronJobModel
 			LOG.warn("Error initializing export script");
 			return new PerformResult(CronJobResult.SUCCESS, CronJobStatus.FINISHED);
 		}
-		final InputStream exportScriptFileStream = ImpExManager.class.getResourceAsStream("offlineProductsExportScript.impex");
+		final InputStream exportScriptFileStream = ImpExManager.class.getResourceAsStream("/offlineProductsExportScript.impex");
 		impexScript.setData(exportScriptFileStream, impexScript.getCode() + "." + ImpExConstants.File.EXTENSION_CSV,
 				ImpExConstants.File.MIME_TYPE_CSV);
 
