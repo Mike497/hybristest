@@ -56,11 +56,11 @@ public class ProductDaoImplTest extends ServicelayerTransactionalTest
 		catalogVersionService.setSessionCatalogVersion(CATALOG_ID, CATALOG_VER);
 
 		// first we save an example product
-		final ProductModel product = modelService.create(ProductModel.class);
+		final ProductModel product = new ProductModel();
 		product.setCode(CODE);
 		product.setCatalogVersion(catalogVersionService.getCatalogVersion(CATALOG_ID, CATALOG_VER));
 		// creating media
-		final MediaModel media = modelService.create(MediaModel.class);
+		final MediaModel media = new MediaModel();
 		media.setCode(CODE);
 		media.setCatalogVersion(catalogVersionService.getCatalogVersion(CATALOG_ID, CATALOG_VER));
 		media.setDescription("Some description");
@@ -68,7 +68,7 @@ public class ProductDaoImplTest extends ServicelayerTransactionalTest
 		modelService.save(product);
 
 		// then we try to get this product via our dao
-		assertEquals("Some description", productDAO.getProductImageDescription(CATALOG_ID, CATALOG_VER));
+		assertEquals("Some description", productDAO.getProductImageDescription(CODE, CATALOG_VER));
 	}
 
 	@Test
@@ -78,7 +78,7 @@ public class ProductDaoImplTest extends ServicelayerTransactionalTest
 		catalogVersionService.setSessionCatalogVersion(CATALOG_ID, CATALOG_VER);
 
 		// first we save an example product
-		final ProductModel product = modelService.create(ProductModel.class);
+		final ProductModel product = new ProductModel();
 		product.setCode(CODE);
 		product.setCatalogVersion(catalogVersionService.getCatalogVersion(CATALOG_ID, CATALOG_VER));
 		modelService.save(product);

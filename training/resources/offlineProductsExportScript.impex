@@ -1,0 +1,3 @@
+"#% impex.setTargetFile( ""offline_products.csv"", true, 1, -1 );"
+insert_update Product;code[unique=true]
+"#% impex.exportItems( ""select {p.pk} from {product as p} where datediff({p.offlineDate}, curdate()) <= 5"" );"

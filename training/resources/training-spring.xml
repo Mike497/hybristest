@@ -37,6 +37,9 @@
 	<!-- Listeners -->
 	<bean id="productSaveEventListener" class="org.training.listeners.ProductSaveEventListener" />
 
+	<!-- Cronjobs -->
+	<bean id="offlineProductsCronJob" class="org.training.cronjobs.OfflineProductExportJob" autowire="byName" />
+
 	<!-- The hybris platform provides one single Spring application context for beans located at the jalo layer. Each extension can add 
 		beans to this context by specifying them at this configuration file. You can use and/or redefine beans defined at configuration files 
 		of other extensions as well as adding new one. If you want to locate this file at a different location or want to use several files 
