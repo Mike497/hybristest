@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list-view unassigned-group-name="Other">
+	<group name="General">
+		<property qualifier="Product.code" visible="true" />
+		<property qualifier="Product.name" visible="true">
+			<language isocode="en" />
+			<language isocode="de" />
+		</property>
+		<property qualifier="Product.metaInfo" visible="true" />
+		<property qualifier="Product.picture" visible="true" />
+		<property qualifier="Product.thumbnail" editor="simpleMediaReferenceSelector" visible="true">
+			<renderer class="de.hybris.platform.cockpit.model.listview.impl.ImageCellRenderer" />
+		</property>
+	</group>
+</list-view>

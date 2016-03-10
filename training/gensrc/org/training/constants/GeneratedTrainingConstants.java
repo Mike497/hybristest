@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Mar 9, 2016 4:49:51 PM                      ---
+ * --- Generated at Mar 10, 2016 4:25:05 PM                     ---
  * ----------------------------------------------------------------
  */
 package org.training.constants;
@@ -30,6 +30,7 @@ public class GeneratedTrainingConstants
 		public static class Product
 		{
 			public static final String ADDITIONALDESCRIPTION = "additionalDescription".intern();
+			public static final String METAINFO = "metaInfo".intern();
 			public static final String PRODUCTBUNDLE = "productBundle".intern();
 		}
 		public static class User

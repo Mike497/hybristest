@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Mar 9, 2016 4:49:51 PM                      ---
+ * --- Generated at Mar 10, 2016 4:25:05 PM                     ---
  * ----------------------------------------------------------------
  */
 package org.training.jalo;
@@ -43,6 +43,7 @@ public abstract class GeneratedTrainingManager extends Extension
 		final Map<String, Map<String, AttributeMode>> ttmp = new HashMap();
 		Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>();
 		tmp.put("additionalDescription", AttributeMode.INITIAL);
+		tmp.put("metaInfo", AttributeMode.INITIAL);
 		tmp.put("productBundle", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.jalo.product.Product", Collections.unmodifiableMap(tmp));
 		tmp = new HashMap<String, AttributeMode>();
@@ -343,6 +344,86 @@ public abstract class GeneratedTrainingManager extends Extension
 	public String getName()
 	{
 		return TrainingConstants.EXTENSIONNAME;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.metaInfo</code> attribute.
+	 * @return the metaInfo - Product's meta info
+	 */
+	public String getMetaInfo(final SessionContext ctx, final Product item)
+	{
+		if( ctx == null || ctx.getLanguage() == null )
+		{
+			throw new JaloInvalidParameterException("GeneratedProduct.getMetaInfo requires a session language", 0 );
+		}
+		return (String)item.getLocalizedProperty( ctx, TrainingConstants.Attributes.Product.METAINFO);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.metaInfo</code> attribute.
+	 * @return the metaInfo - Product's meta info
+	 */
+	public String getMetaInfo(final Product item)
+	{
+		return getMetaInfo( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.metaInfo</code> attribute. 
+	 * @return the localized metaInfo - Product's meta info
+	 */
+	public Map<Language,String> getAllMetaInfo(final SessionContext ctx, final Product item)
+	{
+		return (Map<Language,String>)item.getAllLocalizedProperties(ctx,TrainingConstants.Attributes.Product.METAINFO,C2LManager.getInstance().getAllLanguages());
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.metaInfo</code> attribute. 
+	 * @return the localized metaInfo - Product's meta info
+	 */
+	public Map<Language,String> getAllMetaInfo(final Product item)
+	{
+		return getAllMetaInfo( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.metaInfo</code> attribute. 
+	 * @param value the metaInfo - Product's meta info
+	 */
+	public void setMetaInfo(final SessionContext ctx, final Product item, final String value)
+	{
+		if( ctx == null || ctx.getLanguage() == null )
+		{
+			throw new JaloInvalidParameterException("GeneratedProduct.setMetaInfo requires a session language", 0 );
+		}
+		item.setLocalizedProperty(ctx, TrainingConstants.Attributes.Product.METAINFO,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.metaInfo</code> attribute. 
+	 * @param value the metaInfo - Product's meta info
+	 */
+	public void setMetaInfo(final Product item, final String value)
+	{
+		setMetaInfo( getSession().getSessionContext(), item, value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.metaInfo</code> attribute. 
+	 * @param value the metaInfo - Product's meta info
+	 */
+	public void setAllMetaInfo(final SessionContext ctx, final Product item, final Map<Language,String> value)
+	{
+		item.setAllLocalizedProperties(ctx,TrainingConstants.Attributes.Product.METAINFO,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.metaInfo</code> attribute. 
+	 * @param value the metaInfo - Product's meta info
+	 */
+	public void setAllMetaInfo(final Product item, final Map<Language,String> value)
+	{
+		setAllMetaInfo( getSession().getSessionContext(), item, value );
 	}
 	
 	/**

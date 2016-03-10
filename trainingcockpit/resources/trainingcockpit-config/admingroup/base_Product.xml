@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<base>
+	<search>
+		<search-properties>
+			<property qualifier="Product.code" />
+			<property qualifier="Product.name" />
+			<property qualifier="Product.metaInfo" />
+		</search-properties>
+		<sort-properties>
+			<property qualifier="Product.name" />
+		</sort-properties>
+	</search>
+	<label>
+		<property qualifier="Product.code" />
+		<property qualifier="Product.name" />
+		<property qualifier="Product.metaInfo" />
+	</label>
+</base>

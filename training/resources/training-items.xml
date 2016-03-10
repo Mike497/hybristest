@@ -21,6 +21,11 @@
 					<persistence type="property" />
 					<modifiers read="true" write="true" optional="true" />
 				</attribute>
+				<attribute qualifier="metaInfo" type="localized:java.lang.String" autocreate="true" generate="true">
+					<description>Product's meta info</description>
+					<persistence type="property" />
+					<modifiers read="true" write="true" optional="true" />
+				</attribute>
 			</attributes>
 		</itemtype>
 
