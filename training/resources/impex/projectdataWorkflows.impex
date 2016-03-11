@@ -1,0 +1,68 @@
+### Creating user groups (product and marketing managers)
+INSERT_UPDATE UserGroup;uid[unique=true];locname[lang=en];hmcLoginDisabled;groups(uid)
+;productmanagers;Product managers;false;admingroup
+;marketingmanagers;Marketing managers;false;admingroup
+
+### Creating users for the above groups
+INSERT_UPDATE User;uid[unique=true];name;sessionlanguage(isocode);password;groups(uid);dateOfBirth
+Employee;manager1;Productmanager1;en;1234;productmanagers;JAN 1, 2000 0:00:00 AM
+Employee;manager2;Productmanager2;en;1234;productmanagers;JAN 1, 2000 0:00:00 AM
+Employee;manager3;Marketingmanager1;en;1234;marketingmanagers;JAN 1, 2000 0:00:00 AM
+Employee;manager4;Marketingmanager2;en;1234;marketingmanagers;JAN 1, 2000 0:00:00 AM
+
+### Defining user rights
+$START_USERRIGHTS;;;;;;;;;
+Type;UID;MemberOfGroups;Password;Target;read;change;create;remove;change_perm
+UserGroup;productmanagers;employeegroup;;;;;;;
+UserGroup;marketingmanagers;employeegroup;;;;;;;
+### Access Rights for Products & Catalog;;;;;;;;;
+;;;;ItemSyncTimestamp;+;;;
+;;;;SyncItemJob;+;;;
+;;;;Type;+;;;
+;;;;Product;+;+;+;+;+;
+;;;;Category;+;+;+;+;+;
+;;;;variantType;+;+;+;+;+;
+;;;;Catalog;+;;;
+;;;;CatalogVersion;+;;;
+;;;;Media;+;+;+;+;+;
+;;;;MediaContainer;+;+;+;+;+;
+;;;;MediaFormat;+;+;+;+;+;
+;;;;MediaFolder;+;+;+;+;+;
+;;;;Vendor;+;+;+;+;+;
+;;;;StockLevel;+;+;+;+;+;
+;;;;Tax;+;+;+;+;+;
+;;;;TaxRow;+;+;+;+;+;
+;;;;PriceRow;+;+;+;+;+;
+;;;;ProductFeature;+;+;+;+;+;
+;;;;ProductReference;+;+;+;+;+;
+;;;;Warehouse;+;+;+;+;+;
+### Access rights for workflow action templates
+;;;;AbstractWorkflowAction;+;+;+;+;+;
+;;;;WorkflowTemplate;+;+;+;+;+;
+;;;;WorkflowActionTemplate;+;+;+;+;+;
+$END_USERRIGHTS;;;;;
+
+### Creating workflow template
+INSERT_UPDATE WorkflowTemplate;code[unique=true];name[lang=en];owner(uid);description[lang=de];description[lang=en];activationscript;visibleForPrincipals(uid);;;
+;NewProductCreation;New product creation;admin;;;;admingroup;;;
+
+### Creating actions templates
+INSERT_UPDATE WorkflowActionTemplate;code[unique=true];name[lang=en];description[lang=de];description[lang=en];principalAssigned(uid);workflow(code)[unique=true];sendEmail;emailAddress;rendererTemplate(code);actionType(code)
+;NPC_Confirm_P_Manager;Confirmation by product manager;;;productmanagers;NewProductCreation;false;;;start
+;NPC_Confirm_M_Manager;Confirmation by marketing manager;;;marketingmanagers;NewProductCreation;false;;;normal
+;NPC_End_P;End;;;productmanagers;NewProductCreation;false;;;end
+;NPC_End_M;End;;;marketingmanagers;NewProductCreation;false;;;end
+
+### Decisions to go
+INSERT_UPDATE WorkflowDecisionTemplate;code[unique=true];name[lang=en];actionTemplate(code);description[allownull=true];;;;;;
+;NPC001;Confirm product by PM;NPC_Confirm_P_Manager;;;;;;;
+;NPC002;Decline product by PM;NPC_Confirm_P_Manager;;;;;;;
+;NPC003;Confirm product by MM;NPC_Confirm_M_Manager;;;;;;;
+;NPC004;Decline product by MM;NPC_Confirm_M_Manager;;;;;;;
+
+### Linking decisions to actions
+INSERT_UPDATE WorkflowActionTemplateLinkTemplateRelation;source(code)[unique=true];target(code)[unique=true];andConnectionTemplate;qualifier;;;;;;;
+;NPC001;NPC_Confirm_M_Manager;false;WorkflowActionTemplateLinkTemplateRelation;;;;;;;
+;NPC002;NPC_End_P;false;WorkflowActionTemplateLinkTemplateRelation;;;;;;;
+;NPC003;NPC_End_M;false;WorkflowActionTemplateLinkTemplateRelation;;;;;;;
+;NPC004;NPC_End_M;false;WorkflowActionTemplateLinkTemplateRelation;;;;;;;
