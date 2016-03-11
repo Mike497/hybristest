@@ -4,6 +4,7 @@
 package org.training.interceptors;
 
 import de.hybris.platform.core.model.product.ProductModel;
+import de.hybris.platform.product.ProductService;
 import de.hybris.platform.servicelayer.event.EventService;
 import de.hybris.platform.servicelayer.interceptor.InterceptorContext;
 import de.hybris.platform.servicelayer.interceptor.InterceptorException;
@@ -19,7 +20,6 @@ import de.hybris.platform.workflow.model.WorkflowTemplateModel;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.training.events.ProductSaveEvent;
 
 
 /**
@@ -46,6 +46,8 @@ public class ProductSaveInterceptor implements PrepareInterceptor<ProductModel>
 	@Autowired
 	private ModelService modelService;
 
+	private ProductService dd;
+
 	/*
 	 * (non-Javadoc)
 	 *
@@ -58,21 +60,25 @@ public class ProductSaveInterceptor implements PrepareInterceptor<ProductModel>
 		LOGGER.info("SAVING NEW PRODUCT INTERCEPTOR!");
 		LOGGER.info("FIRING EVENT TO TEST LISTENER...");
 		// comment two lines below to make dao tests logs cleaner
-		final ProductSaveEvent event = new ProductSaveEvent(product);
-		eventService.publishEvent(event);
+		// final ProductSaveEvent event = new ProductSaveEvent(product);
+		// eventService.publishEvent(event);
 
 		// need to intercept to call workflow for approving products by managers
-		final WorkflowTemplateModel workflowTemplate = this.workflowTemplateService
-				.getWorkflowTemplateForCode("NewProductCreation");
-
-		final WorkflowModel workflow = this.workflowService.createWorkflow(workflowTemplate, product, userService.getAdminUser());
-		modelService.save(workflow);
-		for (final WorkflowActionModel action : workflow.getActions())
+		if (ctx.isNew(product))
 		{
-			modelService.save(action);
-		}
+			final WorkflowTemplateModel workflowTemplate = this.workflowTemplateService
+					.getWorkflowTemplateForCode("NewProductCreation");
 
-		this.workflowProcessingService.startWorkflow(workflow);
+			final WorkflowModel workflow = this.workflowService.createWorkflow(workflowTemplate, product,
+					userService.getAdminUser());
+			modelService.save(workflow);
+			for (final WorkflowActionModel action : workflow.getActions())
+			{
+				modelService.save(action);
+			}
+
+			this.workflowProcessingService.startWorkflow(workflow);
+		}
 
 		LOGGER.info("END OF INTERCEPTOR");
 	}
