@@ -36,6 +36,7 @@
 
 	<!-- Listeners -->
 	<bean id="productSaveEventListener" class="org.training.listeners.ProductSaveEventListener" />
+	<bean id="newProductAfterCreatedListener" class="org.training.listeners.NewProductAfterCreatedListener" />
 
 	<!-- Cronjobs -->
 	<bean id="offlineProductsCronJob" class="org.training.cronjobs.OfflineProductExportJob" autowire="byName" />
