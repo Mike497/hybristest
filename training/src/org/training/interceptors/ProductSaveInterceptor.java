@@ -4,11 +4,10 @@
 package org.training.interceptors;
 
 import de.hybris.platform.core.model.product.ProductModel;
-import de.hybris.platform.product.ProductService;
 import de.hybris.platform.servicelayer.event.EventService;
 import de.hybris.platform.servicelayer.interceptor.InterceptorContext;
 import de.hybris.platform.servicelayer.interceptor.InterceptorException;
-import de.hybris.platform.servicelayer.interceptor.PrepareInterceptor;
+import de.hybris.platform.servicelayer.interceptor.ValidateInterceptor;
 import de.hybris.platform.servicelayer.model.ModelService;
 import de.hybris.platform.servicelayer.user.UserService;
 import de.hybris.platform.workflow.WorkflowProcessingService;
@@ -25,7 +24,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  *
  */
-public class ProductSaveInterceptor implements PrepareInterceptor<ProductModel>
+public class ProductSaveInterceptor implements ValidateInterceptor<ProductModel>
 {
 
 	private static final Logger LOGGER = Logger.getLogger(ProductSaveInterceptor.class);
@@ -46,8 +45,6 @@ public class ProductSaveInterceptor implements PrepareInterceptor<ProductModel>
 	@Autowired
 	private ModelService modelService;
 
-	private ProductService dd;
-
 	/*
 	 * (non-Javadoc)
 	 *
@@ -55,7 +52,7 @@ public class ProductSaveInterceptor implements PrepareInterceptor<ProductModel>
 	 * de.hybris.platform.servicelayer.interceptor.InterceptorContext)
 	 */
 	@Override
-	public void onPrepare(final ProductModel product, final InterceptorContext ctx) throws InterceptorException
+	public void onValidate(final ProductModel product, final InterceptorContext ctx) throws InterceptorException
 	{
 		LOGGER.info("SAVING NEW PRODUCT INTERCEPTOR!");
 		LOGGER.info("FIRING EVENT TO TEST LISTENER...");
