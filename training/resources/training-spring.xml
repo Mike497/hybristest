@@ -33,6 +33,8 @@
 	<!-- Services -->
 	<alias name="productDefaultImageServiceImpl" alias="productDefaultImageService" />
 	<bean id="productDefaultImageServiceImpl" class="org.training.services.ProductDefaultImageServiceImpl" />
+	<alias name="cacheTestImpl" alias="cacheTest" />
+	<bean id="cacheTestImpl" class="org.training.cachetest.CacheTestImpl" />
 
 	<!-- Listeners -->
 	<bean id="productSaveEventListener" class="org.training.listeners.ProductSaveEventListener" />
