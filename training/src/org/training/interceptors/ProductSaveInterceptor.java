@@ -11,7 +11,6 @@ import de.hybris.platform.servicelayer.interceptor.ValidateInterceptor;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.training.events.ProductSaveEvent;
 
 
 /**
@@ -37,8 +36,8 @@ public class ProductSaveInterceptor implements ValidateInterceptor<ProductModel>
 		LOGGER.info("SAVING NEW PRODUCT INTERCEPTOR!");
 		LOGGER.info("FIRING EVENT TO TEST LISTENER...");
 		// comment two lines below to make dao tests logs cleaner
-		final ProductSaveEvent event = new ProductSaveEvent(product);
-		eventService.publishEvent(event);
+		// final ProductSaveEvent event = new ProductSaveEvent(product);
+		// eventService.publishEvent(event);
 
 		LOGGER.info("END OF INTERCEPTOR");
 	}
