@@ -1,0 +1,2 @@
+insert_update DecimalMinConstraint;active[allownull=true];annotation[forceWrite=true];creationtime[forceWrite=true,dateformat=dd.MM.yyyy hh:mm:ss];descriptor(enclosingType(code),qualifier);id[unique=true,allownull=true];message[lang=de];message[lang=en];owner(pk);qualifier;severity(code,itemtype(code));target;type(code);value[allownull=true]
+;true;javax.validation.constraints.DecimalMin;15.03.2016 01:20:01;Customer:age;DecimalMinConstraint_0;;Customer's age must be higher than 18;;age;ERROR:Severity;de.hybris.platform.core.model.user.CustomerModel;Customer;18

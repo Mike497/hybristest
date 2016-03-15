@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Mar 15, 2016 11:01:55 AM                    ---
+ * --- Generated at Mar 15, 2016 1:37:55 PM                     ---
  * ----------------------------------------------------------------
  */
 package org.training.constants;
@@ -24,6 +24,7 @@ public class GeneratedTrainingConstants
 	{
 		public static class Customer
 		{
+			public static final String AGE = "age".intern();
 			public static final String CUSTOMERDESCRIPTION = "customerDescription".intern();
 			public static final String EMAIL = "email".intern();
 		}

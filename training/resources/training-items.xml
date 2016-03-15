@@ -41,6 +41,11 @@
 					<persistence type="dynamic" attributeHandler="customerDescriptionattributeHandler" />
 					<modifiers read="true" write="false" />
 				</attribute>
+				<attribute type="localized:java.lang.String" qualifier="age">
+					<description>Customer age</description>
+					<persistence type="property" />
+					<modifiers read="true" write="true" />
+				</attribute>
 			</attributes>
 		</itemtype>
 

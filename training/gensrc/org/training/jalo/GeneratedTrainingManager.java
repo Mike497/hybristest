@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Mar 15, 2016 11:01:55 AM                    ---
+ * --- Generated at Mar 15, 2016 1:37:55 PM                     ---
  * ----------------------------------------------------------------
  */
 package org.training.jalo;
@@ -48,6 +48,7 @@ public abstract class GeneratedTrainingManager extends Extension
 		ttmp.put("de.hybris.platform.jalo.product.Product", Collections.unmodifiableMap(tmp));
 		tmp = new HashMap<String, AttributeMode>();
 		tmp.put("email", AttributeMode.INITIAL);
+		tmp.put("age", AttributeMode.INITIAL);
 		ttmp.put("de.hybris.platform.jalo.user.Customer", Collections.unmodifiableMap(tmp));
 		tmp = new HashMap<String, AttributeMode>();
 		tmp.put("dateOfBirth", AttributeMode.INITIAL);
@@ -144,6 +145,86 @@ public abstract class GeneratedTrainingManager extends Extension
 	public void setAllAdditionalDescription(final Product item, final Map<Language,String> value)
 	{
 		setAllAdditionalDescription( getSession().getSessionContext(), item, value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Customer.age</code> attribute.
+	 * @return the age - Customer age
+	 */
+	public String getAge(final SessionContext ctx, final Customer item)
+	{
+		if( ctx == null || ctx.getLanguage() == null )
+		{
+			throw new JaloInvalidParameterException("GeneratedCustomer.getAge requires a session language", 0 );
+		}
+		return (String)item.getLocalizedProperty( ctx, TrainingConstants.Attributes.Customer.AGE);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Customer.age</code> attribute.
+	 * @return the age - Customer age
+	 */
+	public String getAge(final Customer item)
+	{
+		return getAge( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Customer.age</code> attribute. 
+	 * @return the localized age - Customer age
+	 */
+	public Map<Language,String> getAllAge(final SessionContext ctx, final Customer item)
+	{
+		return (Map<Language,String>)item.getAllLocalizedProperties(ctx,TrainingConstants.Attributes.Customer.AGE,C2LManager.getInstance().getAllLanguages());
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Customer.age</code> attribute. 
+	 * @return the localized age - Customer age
+	 */
+	public Map<Language,String> getAllAge(final Customer item)
+	{
+		return getAllAge( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Customer.age</code> attribute. 
+	 * @param value the age - Customer age
+	 */
+	public void setAge(final SessionContext ctx, final Customer item, final String value)
+	{
+		if( ctx == null || ctx.getLanguage() == null )
+		{
+			throw new JaloInvalidParameterException("GeneratedCustomer.setAge requires a session language", 0 );
+		}
+		item.setLocalizedProperty(ctx, TrainingConstants.Attributes.Customer.AGE,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Customer.age</code> attribute. 
+	 * @param value the age - Customer age
+	 */
+	public void setAge(final Customer item, final String value)
+	{
+		setAge( getSession().getSessionContext(), item, value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Customer.age</code> attribute. 
+	 * @param value the age - Customer age
+	 */
+	public void setAllAge(final SessionContext ctx, final Customer item, final Map<Language,String> value)
+	{
+		item.setAllLocalizedProperties(ctx,TrainingConstants.Attributes.Customer.AGE,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Customer.age</code> attribute. 
+	 * @param value the age - Customer age
+	 */
+	public void setAllAge(final Customer item, final Map<Language,String> value)
+	{
+		setAllAge( getSession().getSessionContext(), item, value );
 	}
 	
 	public ImageMedia createImageMedia(final SessionContext ctx, final Map attributeValues)

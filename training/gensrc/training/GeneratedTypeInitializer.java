@@ -103,6 +103,8 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 				single_createattr_Customer_customerDescription();
 			
+				single_createattr_Customer_age();
+			
 				single_createattr_ImageMedia_topic();
 			
 				single_createattr_Supplier_id();
@@ -199,6 +201,23 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 					"localized:java.lang.String",
 					null,
 					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG
+				);
+			
+	}
+	
+	public void single_createattr_Customer_age() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"Customer", 
+					"age",  
+					null,
+					"localized:java.lang.String",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
 				);
 			
 	}
@@ -363,6 +382,8 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 		
 			single_setAttributeProperties_Customer_customerDescription();
 		
+			single_setAttributeProperties_Customer_age();
+		
 				{
 				Map customPropsMap = new HashMap();
 				
@@ -519,6 +540,28 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 								null,
 								customPropsMap,
 								"customerDescriptionattributeHandler"
+							);
+						}
+					
+						public void single_setAttributeProperties_Customer_age() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"Customer", 
+								"age",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
 							);
 						}
 					
