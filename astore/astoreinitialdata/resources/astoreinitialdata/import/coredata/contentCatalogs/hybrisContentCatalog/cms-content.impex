@@ -7,6 +7,11 @@ $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCata
 # Import modulegen config properties into impex macros
 UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true]
 $jarResourceCms=$config-jarResourceCmsValue
+
+# Adding FeedbackComponent to specific group
+INSERT_UPDATE ComponentTypeGroups2ComponentType;source(code)[unique=true];target(code)[unique=true]
+;narrow;FeedbackComponent
+
 # Create PageTemplates
 # These define the layout for pages
 # "FrontendTemplateName" is used to define the JSP that should be used to render the page for pages with multiple possible layouts.
@@ -91,8 +96,8 @@ INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=
 ;Section4;;;wide
 ;VariantSelector;;ProductVariantSelectorComponent;narrow
 ;AddToCart;;ProductAddToCartComponent;narrow
-;CrossSelling;;ProductReferencesComponent;narrow
-;UpSelling;;ProductReferencesComponent;narrow
+;CrossSelling;;ProductReferencesComponent,FeedbackComponent;narrow
+;UpSelling;;ProductReferencesComponent,FeedbackComponent;narrow
 ;Footer;;;footer
 ;Tabs;;CMSTabParagraphContainer
 ;TopHeaderSlot;;;wide

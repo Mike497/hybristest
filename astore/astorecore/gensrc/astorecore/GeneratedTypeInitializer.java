@@ -47,6 +47,16 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 	
 	
 		createItemType(
+			"FeedbackComponent",
+			"SimpleCMSComponent",
+			org.astore.core.jalo.cms.FeedbackComponent.class,
+			null,
+			false,
+			null,
+			false
+		);
+	
+		createItemType(
 			"ApparelProduct",
 			"Product",
 			org.astore.core.jalo.ApparelProduct.class,
@@ -116,6 +126,10 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 
 	
 	
+				single_createattr_FeedbackComponent_media();
+			
+				single_createattr_FeedbackComponent_confirmationMessage();
+			
 				single_createattr_ApparelProduct_genders();
 			
 				single_createattr_ApparelStyleVariantProduct_style();
@@ -129,6 +143,40 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 
 	}
 
+	
+	public void single_createattr_FeedbackComponent_media() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"FeedbackComponent", 
+					"media",  
+					null,
+					"Media",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_FeedbackComponent_confirmationMessage() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"FeedbackComponent", 
+					"confirmationMessage",  
+					null,
+					"java.lang.String",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
 	
 	public void single_createattr_ApparelProduct_genders() throws JaloBusinessException
 	{
@@ -250,6 +298,23 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				Map customPropsMap = new HashMap();
 				
 				setItemTypeProperties(
+					"FeedbackComponent",
+					false,
+					true,
+					true,
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_FeedbackComponent_media();
+		
+			single_setAttributeProperties_FeedbackComponent_confirmationMessage();
+		
+				{
+				Map customPropsMap = new HashMap();
+				
+				setItemTypeProperties(
 					"ApparelProduct",
 					false,
 					true,
@@ -333,6 +398,50 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 
 
 		
+						public void single_setAttributeProperties_FeedbackComponent_media() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"FeedbackComponent", 
+								"media",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_FeedbackComponent_confirmationMessage() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"FeedbackComponent", 
+								"confirmationMessage",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
 						public void single_setAttributeProperties_ApparelProduct_genders() throws JaloBusinessException
 						{
 							

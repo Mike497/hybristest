@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Mar 17, 2016 3:09:49 PM                     ---
+ * --- Generated at Mar 28, 2016 1:50:10 PM                     ---
  * ----------------------------------------------------------------
  */
 package org.astore.core.jalo;
@@ -21,6 +21,7 @@ import org.astore.core.jalo.ApparelProduct;
 import org.astore.core.jalo.ApparelSizeVariantProduct;
 import org.astore.core.jalo.ApparelStyleVariantProduct;
 import org.astore.core.jalo.ElectronicsColorVariantProduct;
+import org.astore.core.jalo.cms.FeedbackComponent;
 
 /**
  * Generated class for type <code>AstoreCoreManager</code>.
@@ -148,6 +149,32 @@ public abstract class GeneratedAstoreCoreManager extends Extension
 	public ElectronicsColorVariantProduct createElectronicsColorVariantProduct(final Map attributeValues)
 	{
 		return createElectronicsColorVariantProduct( getSession().getSessionContext(), attributeValues );
+	}
+	
+	public FeedbackComponent createFeedbackComponent(final SessionContext ctx, final Map attributeValues)
+	{
+		try
+		{
+			ComposedType type = getTenant().getJaloConnection().getTypeManager().getComposedType( AstoreCoreConstants.TC.FEEDBACKCOMPONENT );
+			return (FeedbackComponent)type.newInstance( ctx, attributeValues );
+		}
+		catch( JaloGenericCreationException e)
+		{
+			final Throwable cause = e.getCause();
+			throw (cause instanceof RuntimeException ?
+			(RuntimeException)cause
+			:
+			new JaloSystemException( cause, cause.getMessage(), e.getErrorCode() ) );
+		}
+		catch( JaloBusinessException e )
+		{
+			throw new JaloSystemException( e ,"error creating FeedbackComponent : "+e.getMessage(), 0 );
+		}
+	}
+	
+	public FeedbackComponent createFeedbackComponent(final Map attributeValues)
+	{
+		return createFeedbackComponent( getSession().getSessionContext(), attributeValues );
 	}
 	
 	@Override

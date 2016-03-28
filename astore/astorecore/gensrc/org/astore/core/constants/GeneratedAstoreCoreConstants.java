@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Mar 17, 2016 3:09:49 PM                     ---
+ * --- Generated at Mar 28, 2016 1:50:10 PM                     ---
  * ----------------------------------------------------------------
  */
 package org.astore.core.constants;
@@ -20,6 +20,7 @@ public class GeneratedAstoreCoreConstants
 		public static final String APPARELSIZEVARIANTPRODUCT = "ApparelSizeVariantProduct".intern();
 		public static final String APPARELSTYLEVARIANTPRODUCT = "ApparelStyleVariantProduct".intern();
 		public static final String ELECTRONICSCOLORVARIANTPRODUCT = "ElectronicsColorVariantProduct".intern();
+		public static final String FEEDBACKCOMPONENT = "FeedbackComponent".intern();
 		public static final String SWATCHCOLORENUM = "SwatchColorEnum".intern();
 	}
 	public static class Attributes
