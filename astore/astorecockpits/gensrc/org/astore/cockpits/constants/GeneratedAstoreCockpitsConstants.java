@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Mar 28, 2016 1:50:10 PM                     ---
+ * --- Generated at Mar 30, 2016 2:16:43 PM                     ---
  * ----------------------------------------------------------------
  */
 package org.astore.cockpits.constants;

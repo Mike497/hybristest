@@ -200,4 +200,24 @@
 		<property name="userService" ref="userService" />
 	</bean>
 
+	<bean id="productInternalOnlyPopulator" class="org.astore.facades.populators.ProductInternalOnlyPopulator" />
+	<bean id="searchResultProductInternalOnlyPopulator" class="org.astore.facades.populators.SearchResultProductInternalOnlyPopulator" />
+
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="productConverter" />
+		<property name="add" ref="productInternalOnlyPopulator" />
+	</bean>
+
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="commerceSearchResultProductConverter" />
+		<property name="add" ref="searchResultProductInternalOnlyPopulator" />
+	</bean>
+
+	<bean id="customerInternalPopulator" class="org.astore.facades.populators.CustomerInternalPopulator" />
+
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="customerConverter" />
+		<property name="add" ref="customerInternalPopulator" />
+	</bean>
+
 </beans>

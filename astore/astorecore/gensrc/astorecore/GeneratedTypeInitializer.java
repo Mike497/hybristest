@@ -130,6 +130,10 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 			
 				single_createattr_FeedbackComponent_confirmationMessage();
 			
+				single_createattr_Product_internalOnly();
+			
+				single_createattr_Customer_isInternal();
+			
 				single_createattr_ApparelProduct_genders();
 			
 				single_createattr_ApparelStyleVariantProduct_style();
@@ -174,6 +178,36 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
 					null,
 					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_Product_internalOnly() throws JaloBusinessException
+	{
+		
+						Map sqlColumnDefinitions = null;
+					
+				createPropertyAttribute(
+					"Product", 
+					"internalOnly",  
+					null,
+					"java.lang.Boolean",
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG,
+					null,
+					sqlColumnDefinitions
+				);
+			
+	}
+	
+	public void single_createattr_Customer_isInternal() throws JaloBusinessException
+	{
+		
+				createDynamicAttribute(
+					"Customer", 
+					"isInternal",  
+					"java.lang.Boolean",
+					null,
+					de.hybris.platform.jalo.type.AttributeDescriptor.READ_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.WRITE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.OPTIONAL_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.REMOVE_FLAG|de.hybris.platform.jalo.type.AttributeDescriptor.SEARCH_FLAG
 				);
 			
 	}
@@ -314,6 +348,30 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 				{
 				Map customPropsMap = new HashMap();
 				
+				changeMetaType(
+					"Product",
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_Product_internalOnly();
+		
+				{
+				Map customPropsMap = new HashMap();
+				
+				changeMetaType(
+					"Customer",
+					null,
+					customPropsMap
+				);
+				}
+			
+			single_setAttributeProperties_Customer_isInternal();
+		
+				{
+				Map customPropsMap = new HashMap();
+				
 				setItemTypeProperties(
 					"ApparelProduct",
 					false,
@@ -439,6 +497,50 @@ public class GeneratedTypeInitializer extends AbstractTypeInitializer
 								null,
 								customPropsMap,
 								null
+							);
+						}
+					
+						public void single_setAttributeProperties_Product_internalOnly() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"Product", 
+								"internalOnly",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								null
+							);
+						}
+					
+						public void single_setAttributeProperties_Customer_isInternal() throws JaloBusinessException
+						{
+							
+							
+							
+							Map customPropsMap = new HashMap();
+							
+							setAttributeProperties(
+								"Customer", 
+								"isInternal",
+								false, 
+								null,
+								null,
+								null,
+								true,
+								true,
+								null,
+								customPropsMap,
+								"dynamicHybrisCustomerAttributeBean"
 							);
 						}
 					

@@ -418,4 +418,6 @@
 	</bean>
 
 
+	<bean id="dynamicHybrisCustomerAttributeBean" class="org.astore.core.model.DynamicHybrisCustomerAttributeBean" />
+
 </beans>

@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Mar 28, 2016 1:50:10 PM                     ---
+ * --- Generated at Mar 30, 2016 2:16:43 PM                     ---
  * ----------------------------------------------------------------
  */
 package org.astore.core.constants;
@@ -25,7 +25,14 @@ public class GeneratedAstoreCoreConstants
 	}
 	public static class Attributes
 	{
-		// no constants defined.
+		public static class Customer
+		{
+			public static final String ISINTERNAL = "isInternal".intern();
+		}
+		public static class Product
+		{
+			public static final String INTERNALONLY = "internalOnly".intern();
+		}
 	}
 	public static class Enumerations
 	{

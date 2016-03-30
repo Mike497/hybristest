@@ -1,19 +1,23 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Mar 28, 2016 1:50:10 PM                     ---
+ * --- Generated at Mar 30, 2016 2:16:43 PM                     ---
  * ----------------------------------------------------------------
  */
 package org.astore.core.jalo;
 
+import de.hybris.platform.jalo.GenericItem;
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
 import de.hybris.platform.jalo.JaloBusinessException;
 import de.hybris.platform.jalo.JaloSystemException;
 import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.extension.Extension;
+import de.hybris.platform.jalo.product.Product;
 import de.hybris.platform.jalo.type.ComposedType;
 import de.hybris.platform.jalo.type.JaloGenericCreationException;
+import de.hybris.platform.jalo.user.User;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import org.astore.core.constants.AstoreCoreConstants;
@@ -33,6 +37,9 @@ public abstract class GeneratedAstoreCoreManager extends Extension
 	static
 	{
 		final Map<String, Map<String, AttributeMode>> ttmp = new HashMap();
+		Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>();
+		tmp.put("internalOnly", AttributeMode.INITIAL);
+		ttmp.put("de.hybris.platform.jalo.product.Product", Collections.unmodifiableMap(tmp));
 		DEFAULT_INITIAL_ATTRIBUTES = ttmp;
 	}
 	@Override
@@ -181,6 +188,79 @@ public abstract class GeneratedAstoreCoreManager extends Extension
 	public String getName()
 	{
 		return AstoreCoreConstants.EXTENSIONNAME;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.internalOnly</code> attribute.
+	 * @return the internalOnly - Defines if the product should be sold to hybris employees only.
+	 */
+	public Boolean isInternalOnly(final SessionContext ctx, final Product item)
+	{
+		return (Boolean)item.getProperty( ctx, AstoreCoreConstants.Attributes.Product.INTERNALONLY);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.internalOnly</code> attribute.
+	 * @return the internalOnly - Defines if the product should be sold to hybris employees only.
+	 */
+	public Boolean isInternalOnly(final Product item)
+	{
+		return isInternalOnly( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.internalOnly</code> attribute. 
+	 * @return the internalOnly - Defines if the product should be sold to hybris employees only.
+	 */
+	public boolean isInternalOnlyAsPrimitive(final SessionContext ctx, final Product item)
+	{
+		Boolean value = isInternalOnly( ctx,item );
+		return value != null ? value.booleanValue() : false;
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>Product.internalOnly</code> attribute. 
+	 * @return the internalOnly - Defines if the product should be sold to hybris employees only.
+	 */
+	public boolean isInternalOnlyAsPrimitive(final Product item)
+	{
+		return isInternalOnlyAsPrimitive( getSession().getSessionContext(), item );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.internalOnly</code> attribute. 
+	 * @param value the internalOnly - Defines if the product should be sold to hybris employees only.
+	 */
+	public void setInternalOnly(final SessionContext ctx, final Product item, final Boolean value)
+	{
+		item.setProperty(ctx, AstoreCoreConstants.Attributes.Product.INTERNALONLY,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.internalOnly</code> attribute. 
+	 * @param value the internalOnly - Defines if the product should be sold to hybris employees only.
+	 */
+	public void setInternalOnly(final Product item, final Boolean value)
+	{
+		setInternalOnly( getSession().getSessionContext(), item, value );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.internalOnly</code> attribute. 
+	 * @param value the internalOnly - Defines if the product should be sold to hybris employees only.
+	 */
+	public void setInternalOnly(final SessionContext ctx, final Product item, final boolean value)
+	{
+		setInternalOnly( ctx, item, Boolean.valueOf( value ) );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>Product.internalOnly</code> attribute. 
+	 * @param value the internalOnly - Defines if the product should be sold to hybris employees only.
+	 */
+	public void setInternalOnly(final Product item, final boolean value)
+	{
+		setInternalOnly( getSession().getSessionContext(), item, value );
 	}
 	
 }
