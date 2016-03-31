@@ -220,4 +220,9 @@
 		<property name="add" ref="customerInternalPopulator" />
 	</bean>
 
+
+	<bean id="rangedAvgCustomerRatingProvider" class="org.astore.facades.search.providers.MerchandiseProductReviewAverageRatingValueProvider"
+		parent="productReviewAverageRatingValueProvider" />
+
+
 </beans>
